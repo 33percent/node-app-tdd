@@ -19,9 +19,14 @@ describe('Testing my configurations', () => {
     afterEach(() => {
         // console.log('akjhsdlk')
     });
-        it('Checking if conf returns a valid object', done => {
-            expect(conf).to.be.an('object');
-            done();
-        })
+    it('Checking if conf returns a valid object', done => {
+        expect(conf).to.be.an('object');
+        done();
+    });
+    it('Checking if conf returns an object greater than zero', done => {
+        const count = Object.keys(conf).length;
+        expect(count).to.be.above(0);
+        done();
+    });
     
 })
