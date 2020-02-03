@@ -8,4 +8,10 @@ router.get("/", function(req, res, next) {
   });
 });
 
+router.get("/ping", (req,res,next) => {
+  res.json({
+    status:"success"
+  })
+});
+
 module.exports = router;
