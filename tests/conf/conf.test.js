@@ -10,7 +10,15 @@ import conf from '../../conf';
 import chai from 'chai';
 const expect = require('chai').expect;
 chai.should()
-
+const confList = ['NODE_ENV','PORT'];
+function arraysIdentical(a, b) {
+    var i = a.length;
+    if (i != b.length) return false;
+    while (i--) {
+        if (a[i] !== b[i]) return false;
+    }
+    return true;
+};
 
 describe('Testing my configurations', () => {
     beforeEach(() => {
@@ -28,5 +36,9 @@ describe('Testing my configurations', () => {
         expect(count).to.be.above(0);
         done();
     });
-    
+    it('Does it return an object which has all the conf', done => {
+        expect(arraysIdentical(Object.keys(conf),confList)).to.be.true;
+        done();
+    });
+
 })

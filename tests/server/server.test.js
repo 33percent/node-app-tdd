@@ -4,11 +4,10 @@ let server = require("../../src/app");
 let should = chai.should()
 chai.use(chaiHttp);
 //Our parent block
-describe("Server Init", () => {
+describe("Server Init & status", () => {
   /*
    * Test the /GET route
    */
-  describe("server status", () => {
     it("is my app working?", done => {
       chai
         .request(server)
@@ -51,5 +50,4 @@ describe("Server Init", () => {
         });
         
     })
-  });
 });
