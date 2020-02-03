@@ -1,8 +1,7 @@
 let chai = require("chai");
 let chaiHttp = require("chai-http");
 let server = require("../../src/app");
-let should = chai.should();
-
+let should = chai.should()
 chai.use(chaiHttp);
 //Our parent block
 describe("Server Init", () => {
