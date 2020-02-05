@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV=DEVELOPMENT./node_modules/.bin/nodemon ./node_modules/.bin/babel-node ./src/bin/www",
-    "test": "NODE_ENV=TEST nyc ./node_modules/.bin/_mocha --require @babel/register tests/**/*.test.js",
+    "test": "NODE_ENV=TEST nyc ./node_modules/.bin/_mocha --require @babel/register --require babel-polyfill tests/**/*.test.js",
     "prod": "NODE_ENV=PRODUCTION node dist/bin/www",
     "build": "./node_modules/.bin/babel src -d dist --source-maps",
-    "cover": "nyc report --reporter=html"
+    "cover": "nyc report --reporter=html",
+    "test:current": "NODE_ENV=TEST ./node_modules/.bin/_mocha --require @babel/register --require babel-polyfill tests/3.usingstub/index.test.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
@@ -23,6 +25,7 @@
     "@babel/node": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@babel/register": "^7.8.3",
+    "babel-polyfill": "^6.26.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "dotenv": "^8.2.0",

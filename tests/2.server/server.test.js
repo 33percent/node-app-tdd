@@ -36,7 +36,7 @@ describe("Server Init & status", () => {
         });
     });
 
-    it('does it handle an error page', done => {
+    it('does it handle an 404 page', done => {
       chai
         .request(server)
         .get('/unknown-route')
@@ -48,6 +48,5 @@ describe("Server Init & status", () => {
           });
           done();
         });
-        
     })
 });
