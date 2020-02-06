@@ -8,7 +8,7 @@
     "prod": "NODE_ENV=PRODUCTION node dist/bin/www",
     "build": "./node_modules/.bin/babel src -d dist --source-maps",
     "cover": "nyc report --reporter=html",
-    "test:current": "NODE_ENV=TEST ./node_modules/.bin/_mocha --require @babel/register --require babel-polyfill tests/3.usingstub/index.test.js"
+    "test:current": "NODE_ENV=TEST ./node_modules/.bin/_mocha --require @babel/register --require babel-polyfill tests/4.req_a_route/index.test.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
